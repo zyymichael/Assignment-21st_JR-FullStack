@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  color: #4181ee;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.card {
+  flex: 1 1 calc(33.33% - 40px);
+  max-width: 300px;
+  min-height: 250px;
+  background-color: aquamarine;
+  color: #fff;
+  padding: 30px;
+  border-radius: 3px;
+  margin: 20px;
+  box-shadow: rgb(50 50 93 / 25%) 0px 30px 60px -12px,
+    rgb(0 0 0 / 30%) 0px 18px 36px -18px;
+}
+
+.wrapper__single {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.wrapper__single .card {
+  flex: 1 1 100%;
+  max-width: 300px;
+  margin: 20px auto;
+}
+
+.card__image__container img {
+  width: 100%;
+}
+
+.card__content {
+  width: 100%;
+}
+
+.card__title {
+  margin-bottom: 20px;
+}
+
+.card__info {
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  flex: 1;
+}
+
+.card__price {
+  background-color: #303032;
+  color: #fff;
+  padding: 5px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
+}
+
+.wrapper .card:nth-child(2) {
+  background-color: #4181ee;
+}
+
+.wrapper__single .card {
+  background-color: #673ab7;
+}
+
+.wrapper .card:nth-child(1):hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper .card:nth-child(1):hover .card__title {
+  color: #4181ee; /* 改变标题颜色 */
+}
+
+.wrapper .card:nth-child(1):hover .card__price {
+  background-color: #4caf50;
+  transform: scale(1.1);
+}
+
+.wrapper .card:nth-child(2) {
+  transition: all 0.5s ease-in-out;
+}
+
+.wrapper .card:nth-child(2):hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+.wrapper .card:nth-child(3):hover {
+  background-color: #f0e68c;
+}
+
+.wrapper .card:nth-child(3):hover .card__title {
+  color: #555;
+  font-size: 1.1em;
+}
+
+.wrapper .card:nth-child(3):hover .text,
+.wrapper .card:nth-child(3):hover .card__price {
+  transform: translateY(-10px);
+}
+
+.wrapper__single .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+}
+
+.wrapper__single .card:hover .card__content {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 1200px) {
+  .card {
+    flex: 0 0 calc(33.33% - 40px);
+    max-width: calc(33.33% - 40px);
+  }
+  .wrapper__single .card {
+    flex: 0 0 100%;
+    max-width: calc(33.33% - 40px);
+  }
+}
+
+@media (max-width: 768px) {
+  .card,
+  .wrapper__single .card {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
